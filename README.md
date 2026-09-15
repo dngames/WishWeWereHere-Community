@@ -26,7 +26,7 @@ This repository isn't the app itself — it's the porch light. It's where you te
 
 ## About this repo
 
-This is a **community and support hub only** — there's no source code here, and there won't be. The website and the Android app are built and maintained privately; this space exists so the people using them have somewhere to speak up.
+This is a **community and support hub only** — there's no source code here, at the moment. The website and the Android app are built and maintained privately; this space exists so the people using them have somewhere to speak up.
 
 We read everything that comes through here. If you're reporting a bug, the more you can tell us about what you saw (and what you expected instead), the faster we can find it — the issue forms below will walk you through it.
 
