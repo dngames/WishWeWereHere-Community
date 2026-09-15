@@ -1,0 +1,90 @@
+name: "🐛 Bug report"
+description: "Something in the postcard didn't come out right — tell us what happened."
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to tell us something's off. The more detail you can give, the faster we can track it down.
+
+  - type: dropdown
+    id: product
+    attributes:
+      label: Where did this happen?
+      description: Which product were you using when you ran into this?
+      options:
+        - Website (www.dngames.de/wishwewerehere/)
+        - Android App
+        - Not sure
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: App / Site version
+      description: If you know it — the app's version number, or roughly when you last visited the site.
+      placeholder: "e.g. v1.2.0, or 'today'"
+    validations:
+      required: false
+
+  - type: input
+    id: os-version
+    attributes:
+      label: Android OS version
+      description: Only relevant if you're on the Android app — Settings → About phone → Android version.
+      placeholder: "e.g. Android 14"
+    validations:
+      required: false
+
+  - type: input
+    id: device-model
+    attributes:
+      label: Device / browser
+      description: Your phone model (Android), or your browser + OS (Website).
+      placeholder: "e.g. Pixel 8, or Chrome on Windows 11"
+    validations:
+      required: false
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Walk us through it, step by step, like you're telling a friend.
+      placeholder: |
+        1. Open the diorama
+        2. Place a lantern near the hill
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected to happen
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: What actually happened
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs, screenshots, or a screen recording
+      description: Drag and drop files here if you have them — a screenshot is worth a thousand words.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you send this
+      options:
+        - label: I looked through existing issues and didn't see this one already reported.
+          required: true

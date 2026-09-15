@@ -1,0 +1,35 @@
+# This repo is a community/support hub only — no source code belongs here.
+# These rules are a defense-in-depth guard against accidental pushes.
+
+# Android / Gradle
+*.apk
+*.aab
+*.jks
+*.keystore
+*.properties
+local.properties
+*.gradle
+.gradle/
+build/
+*.class
+*.dex
+
+# Web / Node
+node_modules/
+dist/
+*.env
+*.env.*
+
+# General secrets / credentials
+*.pem
+*.key
+*.p12
+id_rsa*
+.aws/
+.ssh/
+
+# Editor / OS cruft
+.DS_Store
+.idea/
+.vscode/
+*.swp
