@@ -1,0 +1,70 @@
+name: "🏡 Show a place you made"
+description: "Share a scene you're proud of — it may be added to the gallery."
+title: "[Place]: "
+labels: ["showcase"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Lovely. Two things and this can go in the [gallery](https://github.com/dngames/WishWeWereHere-Community/blob/main/GALLERY.md): the **Store** link, and your postcard.
+
+        **Use the Store link.** The Send panel has two links and they are not the same thing. **Store** copies the whole scene inside the address itself, and it keeps working. The short **Copy** link points at a row on our server that is deleted after 30 days — a gallery built from those would fall apart within a month.
+
+  - type: input
+    id: place-name
+    attributes:
+      label: What is the place called?
+      description: The name you gave it in the app. It travels inside the link, but tell us here too.
+      placeholder: "e.g. Blue Hour"
+    validations:
+      required: true
+
+  - type: textarea
+    id: link
+    attributes:
+      label: The Store link
+      description: |
+        Press **Store** in the app's Send panel and paste exactly what it copied, in this box. It is long — that is the whole place travelling inside the address — and it must not be shortened, edited or wrapped.
+      placeholder: |
+        https://idyll.cc/#s=...
+      render: text
+    validations:
+      required: true
+
+  - type: textarea
+    id: postcard
+    attributes:
+      label: The postcard
+      description: |
+        Press **Save postcard** (next to the link) and drag the image in here. It is the one thing a link cannot do for itself: GitHub, like every chat app, never receives the part of an address after `#`, so a link always previews as the site rather than as your place. The picture is what makes the gallery worth browsing.
+    validations:
+      required: false
+
+  - type: textarea
+    id: words
+    attributes:
+      label: Anything about it
+      description: What you were going for, what you would change, who it is for — a sentence or two is plenty.
+    validations:
+      required: false
+
+  - type: input
+    id: credit
+    attributes:
+      label: How should we credit you?
+      description: A name or a handle, or leave it blank to stay anonymous.
+      placeholder: "e.g. @yourhandle"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you send this
+      options:
+        - label: This is the **Store** link from the Send panel — the long one that never expires — not the short "Copy" link.
+          required: true
+        - label: I made this place, or I have the permission of whoever did.
+          required: true
+        - label: I'm happy for it to be shown publicly, with its name, and added to the gallery.
+          required: true
