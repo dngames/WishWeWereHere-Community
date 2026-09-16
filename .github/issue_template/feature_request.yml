@@ -13,7 +13,7 @@ body:
     attributes:
       label: Where would this apply?
       options:
-        - Website (www.dngames.de/wishwewerehere/)
+        - Website (idyll.cc)
         - Android App
         - Both
         - Not sure
