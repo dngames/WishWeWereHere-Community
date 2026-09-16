@@ -1,0 +1,37 @@
+name: A shared place
+
+# Every issue with the `showcase` label gets one comment from this: whether the link can be read, what
+# is in it, and the two things that are easy to get wrong — the short link, which expires, and the
+# missing postcard, without which the gallery has nothing to show.
+#
+# It never edits the issue, and it never blocks anything: a person still curates the gallery.
+
+on:
+  issues:
+    # `labeled` as well as opened/edited: a place submitted through a blank issue becomes a
+    # submission the moment somebody labels it `showcase`, and the checker should follow that.
+    types: [opened, edited, labeled]
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  read-the-link:
+    if: contains(github.event.issue.labels.*.name, 'showcase')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # The body arrives as an environment variable rather than pasted into the command: it is text a
+      # stranger wrote, and a shell would read some of it as instructions.
+      - name: Read the place link
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPOSITORY: ${{ github.repository }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: node .github/scripts/validate-place.mjs
